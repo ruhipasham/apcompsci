@@ -1,56 +1,41 @@
-#   a113_flower.py
-#   This code draws a flower.
+#   a113_tower.py
+#   Modify this code in VS Code to alternate the colors of the 
+#   floors every three floors
 import turtle as trtl
 
 painter = trtl.Turtle()
 painter.speed(0)
+painter.pensize(5)
 
-# stem
-painter.color("green")
-painter.pensize(15)
-painter.goto(0, -150)
-painter.setheading(90)
-painter.forward(100)
-#  leaf
-painter.setheading(270)
-painter.circle(20, 120, 20)
-painter.setheading(90)
-painter.goto(0, -60)
-# rest of stem
-painter.forward(60)
-painter.setheading(0)
+# starting location of the tower
+x = -150
+y = 0
 
-# change pen
-painter.penup()
-painter.shape("circle")
-painter.turtlesize(2)
+# height of tower and a counter for each floor
+num_floors = 63
 
-# draw flower
-painter.color("darkorchid")
-painter.goto(20,190)
-
-for petazl in range(18):
-  painter.right(20)
-  painter.forward(30)
-  painter.stamp()
-
-# ring 2 of flower
-painter.goto(20,160)
-painter.color("blue")
-
-for petal in range(12):
-  painter.right(30)
-  painter.forward(30)
-  painter.stamp()
   
-#ring 3
-painter.color("pink")
-painter.goto(20,130)
-
-for petal in range(10):
-  painter.right(40)
-  painter.forward(20)
-  painter.stamp()
+# iterate
+for floor in range(num_floors):
+  # set placement and color of turtle
+  painter.penup()
+  painter.color("gray")
+  rem = floor % 6
+  if (rem < 2):
+    painter.color("blue")
+  if (rem > 3):
+     painter.color("pink")
+  rem = floor % 21
+  if (rem == 0) : 
+    x = x + 60
+    y = 0
+  painter.goto(x,y)
+  y = y + 5 # location of next floor
+  painter.pendown()
+  painter.forward(50)
+  #   a113_tower.py
+#   Modify this code in VS Code to alternate the colors of the 
+#   floors every three floors
 
  
 
