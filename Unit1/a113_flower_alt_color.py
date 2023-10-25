@@ -29,7 +29,7 @@ painter.turtlesize(2)
 # draw flower
 painter.goto(20,180)
 
-for petal in range(18):
+for petal in range(18): #for petal to range(18) times do below
   painter.right(20)
   painter.forward(30)
   painter.color("darkorchid")
